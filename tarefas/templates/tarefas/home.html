@@ -1,0 +1,37 @@
+{% extends 'tarefas/base.html' %}
+
+{% block main %}
+    {% for tarefa in tarefas %}
+        <p>
+            <span class="info">
+                ({{ tarefa.criado.day }}/{{ tarefa.criado.month }})
+                {% if tarefa.prioridade == 1 %}
+                    🟢
+                {% elif tarefa.prioridade == 2 %}
+                    🟡
+                {% else %}
+                     🔴
+                {% endif %}
+            </span>
+            {% if tarefa.concluido == True %}
+                <del>{{ tarefa.titulo }}</del>
+            {% else %}
+                {{ tarefa.titulo }}
+            {% endif %}
+
+
+            <a href="{% url 'tarefas:edita' tarefa.id %}" class="btn btn-warning  btn-sm" style="float: right; margin-right: 10px">
+                Editar
+            </a>
+        </p>
+   {% endfor %}
+        <a href="{% url 'tarefas:nova' %}" class="btn btn-success btn-block">+ Nova Tarefa</a>
+{% endblock %}
+
+
+{% block section %}
+
+<p><img src="data:image/png;base64,{{ data }}" alt=""></p>
+<h3>Gráfico de prioridades das tarefas</h3>
+
+{% endblock %}

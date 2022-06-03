@@ -1,0 +1,36 @@
+/* static/pages/css/base.css */
+
+header p {
+   font-style: italic;
+   color: gray;
+}
+
+
+body {
+   background-color: royalblue;
+}
+
+
+.info {
+   font-size: 0.7em;
+   color: lightgray;
+}
+
+
+main {
+   width: 800px;
+   margin: auto;
+   padding: 10px;
+   background-color: white;
+   border-radius: 6px;
+}
+
+
+main p {
+   text-align: left;
+   padding: 20px;
+   margin: 10px;
+   color: white;
+   background-color: mediumpurple;
+   border-radius: 3px;
+}
